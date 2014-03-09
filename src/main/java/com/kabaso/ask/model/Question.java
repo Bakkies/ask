@@ -15,7 +15,7 @@ public final class Question {
     }
 
     private Question(Builder builder) {
-//        id=builder.id;
+        id=builder.id;
         question= builder.question;
         answers=builder.answers;
 
@@ -37,6 +37,13 @@ public final class Question {
 
         public Builder answers(List<Answer> value){
             answers=value;
+            return this;
+        }
+
+        public Builder question(Question value){
+            id = value.getId();
+            question = value.getQuestion();
+            answers = value.getAnswers();
             return this;
         }
 
